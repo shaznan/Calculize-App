@@ -1,0 +1,238 @@
+@import "configs";
+@import "mediaquery";
+@import "resets";
+
+//Main page styling---------------------
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/Images/Main_Bg.png");
+  background-size: 1920px 1080px;
+}
+
+//Nav buttons
+.simple {
+  padding: 1.5vh 5vh 1.5vh 5vh;
+  border-radius: 7px 0px 0px 7px;
+  background-color: black;
+  color: $accentColor;
+  font-weight: bold;
+  border: 2px solid black;
+  margin-right: 0px;
+  @include productSansRegular;
+  font-size: 1.2rem;
+}
+
+.scientific {
+  padding: 1.5vh 4vh 1.5vh 4vh;
+  border-radius: 0px 7px 7px 0px;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  margin-left: -5px;
+  @include productSansRegular;
+  font-size: 1.2rem;
+}
+
+//Body
+
+.main-content {
+  height: 82vh;
+}
+
+.main-text h1 {
+  font-size: 4.5rem;
+  @include productSansRegular;
+}
+
+.main-text span {
+  font-weight: bold;
+  color: $accentColor;
+}
+
+//Calculator
+
+.calculator {
+  max-width: 19%;
+  // width: 20%;
+  margin-top: 10vh;
+  margin-left: 40vh;
+  height: 65vh;
+  background-color: $darkcolor;
+  border-radius: 33px;
+  box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
+  // justify-content: center;
+}
+
+//icons
+.history {
+  color: white;
+  font-size: 1.3rem;
+  transform: scale(1);
+  transition: 0.4s;
+
+  &:hover {
+    color: $accentColor;
+  }
+}
+
+.reset {
+  color: white;
+  font-size: 1.3rem;
+  transition: 0.4s;
+
+  &:hover {
+    color: $accentColor;
+  }
+}
+
+//calculations and result
+
+.displayResult {
+  color: white;
+  height: 20vh;
+}
+
+.calculation span {
+  color: $accentColor;
+  margin-right: 2px;
+  margin-left: 3px;
+}
+
+.result {
+  font-size: 3.5rem;
+  @include productSansRegular;
+  height: 8vh;
+}
+
+//Calculator keys
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  height: 40vh;
+  gap: 0px 0px;
+  grid-template-areas:
+    "clear plus-neg percentage divide"
+    "seven eight Nine multiply"
+    "four five six substract"
+    "one two three plus"
+    "empty zero dot equals";
+}
+
+.clear {
+  grid-area: clear;
+  @include calckeys(#aaaaaa);
+}
+
+.plus-neg {
+  grid-area: plus-neg;
+  @include calckeys(#aaaaaa);
+}
+
+.percentage {
+  grid-area: percentage;
+  @include calckeys(#aaaaaa);
+}
+
+.divide {
+  grid-area: divide;
+  @include calckeys($accentColor);
+  font-size: 2rem;
+  padding-top: 0.35rem;
+}
+
+.multiply {
+  grid-area: multiply;
+  @include calckeys($accentColor);
+  font-size: 2rem;
+  padding-top: 0.5rem;
+}
+
+.substract {
+  grid-area: substract;
+  @include calckeys($accentColor);
+  font-size: 2rem;
+  padding-top: 0.5rem;
+}
+
+.plus {
+  grid-area: plus;
+  @include calckeys($accentColor);
+  font-size: 2rem;
+  padding-top: 0.3rem;
+}
+
+.equals {
+  grid-area: equals;
+  @include calckeys($accentColor);
+  border-radius: 0px 0px 33px 0px;
+  font-size: 2rem;
+  padding-top: 0.4rem;
+}
+
+.Nine {
+  grid-area: Nine;
+  @include calckeys(white);
+}
+
+.eight {
+  grid-area: eight;
+  @include calckeys(white);
+}
+
+.seven {
+  grid-area: seven;
+  @include calckeys(white);
+}
+
+.six {
+  grid-area: six;
+  @include calckeys(white);
+}
+
+.five {
+  grid-area: five;
+  @include calckeys(white);
+}
+
+.four {
+  grid-area: four;
+  @include calckeys(white);
+}
+
+.three {
+  grid-area: three;
+  @include calckeys(white);
+}
+
+.two {
+  grid-area: two;
+  @include calckeys(white);
+}
+
+.one {
+  grid-area: one;
+  @include calckeys(white);
+}
+
+.zero {
+  grid-area: zero;
+  @include calckeys(white);
+}
+
+.dot {
+  grid-area: dot;
+  @include calckeys(white);
+}
+
+.empty {
+  grid-area: empty;
+  @include calckeys(#252932);
+  border-radius: 0px 0px 0px 33px;
+
+  &:hover {
+    background-color: #252932;
+  }
+}

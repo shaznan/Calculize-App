@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!---Bootstrap-->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+    />
+    <!------Font-->
+      <!----B4 Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <!---Local font-->
+    <style>
+      @font-face { font-family: ProductSansRegular; src: url('/Font/Product\ Sans\ Regular.ttf'); } 
+      @font-face { font-family: ProductSansBold; src: url('/Font/Product\ Sans\ Bold.ttf'); } 
+
+    </style>
+    <!----CSS Style sheet-->
+    <link rel="stylesheet" href="/dist/css/Main.css" />
+  </head>
+  <body>
+    <main>
+      <!----Main container-->
+      <div class="container-fluid  main-page">
+        <div class="container">
+           <!--Header-->
+        <section class="row navigation">
+          <div class="logo col-8 mt-5">
+            <img
+              src="/Images/logo sideways black-01.png"
+              alt="Logo-image"
+              width="200vh"
+            />
+          </div>
+          <div class="calc-option col-4 mt-5 d-flex justify-content-end ">
+            <div class="simple d-inline" >Simple</div>
+            <div class="scientific d-inline ">Scientific</div>
+          </div>
+        </section>
+        <!--Body-->
+        <section class="row main-content">
+          <div class="text col-6 d-flex align-items-center main-text justify-content-center">
+           <h1>Your One Stop<br><span>Calculation</span> <br> Spot </h1>
+          </div>
+          <div class="calculator col-6 ">
+            <div class="row icons mt-3 pr-2 pl-2">
+              <div class="col-6 history d-inline-flex justify-content-start"></i><i class="bi bi-clock-history"></i></div>
+              <div class="col-6 reset d-inline-flex justify-content-end"><i class="bi bi-arrow-clockwise"></i></div>
+            </div>
+            <div class="row displayResult align-items-end pr-3 mb-4">
+              <div class="calculation col-12  d-flex justify-content-end pt-5 mt-5">814 <span>x</span> 122</div>
+              <div class="result col-12 d-flex justify-content-end">99,308</div>
+            </div>
+            <div class="grid-container row calc-keys text-light">
+              <div class="clear">C</div>
+              <div class="plus-neg">+/-</div>
+              <div class="percentage">%</div>
+              <div class="divide">÷</div>
+              <div class="multiply">×</div>
+              <div class="substract">-</div>
+              <div class="plus">+</div>
+              <div class="equals">=</div>
+              <div class="Nine">9</div>
+              <div class="eight">8</div>
+              <div class="seven">7</div>
+              <div class="six">6</div>
+              <div class="five">5</div>
+              <div class="four">4</div>
+              <div class="three">3</div>
+              <div class="two">2</div>
+              <div class="one">1</div>
+              <div class="zero">0</div>
+              <div class="dot">.</div>
+              <div class="empty">/</div>
+            </div>
+  
+          </div>
+        </section>
+
+      </div>
+    </main>
+        </div>
+       
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

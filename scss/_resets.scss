@@ -1,0 +1,34 @@
+//Colours
+$accentColor: #ff006f;
+$darkcolor: #191c21;
+
+//Font family
+@mixin Montserrat {
+  //   font-family: "Nunito Sans", sans-serif;
+  //   font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin productSansBold {
+  font-family: ProductSansBold;
+}
+
+@mixin productSansRegular {
+  font-family: ProductSansRegular;
+}
+
+@mixin calckeys($color) {
+  display: flex;
+  padding: 1rem;
+  background-color: #252932;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: $color;
+  transform: scale(1);
+  transition: 0.1s;
+
+  &:hover {
+    background-color: #15171d;
+    transform: scale(1.02);
+  }
+}
