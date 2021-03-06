@@ -8,4 +8,7 @@ The calculator app will be built using the below tools:
 - Scss & CSS
 - Vanilla Javascript 
 
+![alt text](https://github.com/shaznan/Calculize-App/blob/main/Images/UI%20.png?raw=true)
+
+
 
