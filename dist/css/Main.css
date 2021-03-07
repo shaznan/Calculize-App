@@ -654,4 +654,11 @@ body {
 .empty:hover {
   background-color: #252932;
 }
+
+[contenteditable="false"]:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block;
+  /* For Firefox */
+}
 /*# sourceMappingURL=Main.css.map */
