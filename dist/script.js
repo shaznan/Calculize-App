@@ -5,6 +5,7 @@ const calcSummary = document.querySelector(".calculation");
 const displayResult = document.querySelector(".result");
 const HistoryBtn = document.querySelector(".history");
 const resetBtn = document.querySelector(".reset");
+const historyView = document.querySelector(".history-view");
 
 // Buttons
 const clearBtn = document.querySelector(".clear");
@@ -32,8 +33,8 @@ const emptyBtn = document.querySelector(".empty");
 
 const buttonlist = [
   //   clearBtn,
-  plusNegBtn,
-  percentageBtn,
+  // plusNegBtn,
+  // percentageBtn,
   divideBtn,
   multiplyBtn,
   substractBtn,
@@ -53,11 +54,11 @@ const buttonlist = [
   emptyBtn,
 ];
 
-// let displayResultArray = 0;
 let operationHistory = [];
-let history = 0;
+let operationFinalResult = [];
 let displayResultValue;
 
+//Button click display value
 const btnAction = function (arrlist) {
   arrlist.forEach(function (arr) {
     arr.addEventListener("click", function () {
@@ -70,50 +71,166 @@ const btnAction = function (arrlist) {
 
 btnAction(buttonlist);
 
-// displayResultValue.push("hi");
-
-//Equal Button
-
-const equal = function (button) {
-  button.addEventListener("click", function () {
-    // displayOperationValue.push(displayResultValue);
-    displayResult.textContent = eval(displayResultValue);
-    calcSummary.textContent = displayResultValue;
-    operationHistory.push(displayResultValue);
-    console.log(operationHistory);
-  });
-};
-
-equal(equalsBtn);
+//Number of digits should not exceed space in calc display
 
 //Creating clear button
 
 const clear = function (button) {
   button.addEventListener("click", function () {
+    //remove last digit
     displayResult.textContent = displayResult.textContent.slice(0, -1);
   });
 };
-
 clear(clearBtn);
 
-//map keys to actual value to show in display
-// remove display++
-//create string to show when clicked
-//calculate display result
+//Creating plus/Neg button
+const plusNeg = function (button) {
+  button.addEventListener("click", function () {
+    if (displayResult.textContent != "") {
+      displayResultValue = -displayResultValue;
+      displayResult.textContent = displayResultValue;
+    } else {
+      displayResult.textContent = "";
+    }
 
-// const testArr = ["1+2+3+4", "5+6+7+8"];
+    // let signCheck = Math.sign(displayResultValue);
+  });
+};
 
-// console.log(eval(testArr[0]));
-//   if (
-//     arr.textContent === "+" ||
-//     arr.textContent === "9" ||
-//     arr.textContent === "8" ||
-//     arr.textContent === "7" ||
-//     arr.textContent === "6" ||
-//     arr.textContent === "5" ||
-//     arr.textContent === "4" ||
-//     arr.textContent === "3" ||
-//     arr.textContent === "2" ||
-//     arr.textContent === "1" ||
-//     arr.textContent === "0"
-//   ) {
+plusNeg(plusNegBtn);
+
+//Creating percentage button
+const percentage = function (button) {
+  button.addEventListener("click", function () {
+    displayResult.textContent += button.textContent;
+    return (displayResultValue = displayResult.textContent);
+  });
+};
+
+percentage(percentageBtn);
+
+//Equal Button------------
+// click counts
+let count = 0;
+
+//History function
+const historyCalculationSummary = function (x) {
+  for (let i = x; i < operationFinalResult.length; i++) {
+    historyView.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="history-row">Math Exp: <span>${operationHistory[i]} </span> <br> Result:  <span>${operationFinalResult[i]}</span> </div> `
+    );
+  }
+};
+
+//Exponential function
+const exponential = function expo(x, f) {
+  return Number.parseFloat(x).toExponential(f);
+};
+
+//initializing button
+const equal = function (button) {
+  button.addEventListener("click", function () {
+    //check for % operator
+    if (displayResult.textContent.includes("%")) {
+      //display expression in calcsummary
+      calcSummary.textContent = displayResultValue;
+      operationHistory.push(displayResultValue);
+
+      //Find how many times % occurance in string
+      let percentTime = displayResultValue.match(/%/gi).length;
+
+      //remove % from string (replace method)
+      displayResultValue = displayResultValue.replaceAll("%", "");
+
+      //check how many % included (divide by 100^ number of times)
+      //calculate result
+      let percentResult = eval(displayResultValue) / 100 ** percentTime;
+      //Push percent result to final result
+      operationFinalResult.push(percentResult);
+      //find out lenght of output value
+      let percentStringCount = percentResult.toString().length;
+      //If lenght > 10, display result as exponent
+      if (percentStringCount > 10) {
+        // convert to exponent , display 6 digits after decimal place
+        displayResult.textContent = exponential(percentResult, 6);
+      } else {
+        displayResult.textContent = percentResult;
+        calcSummary.textContent = displayResultValue;
+        operationHistory.push(displayResultValue);
+        // console.log(operationHistory);
+      }
+
+      // displayResult.textContent = eval(displayResultValue) / 100 ** percentTime;
+    } else {
+      //result calculation
+      let result = eval(displayResultValue);
+      //push result to operation result array
+      operationFinalResult.push(result);
+      console.log(operationFinalResult);
+      //Find out lenght of output value
+      let stringCount = result.toString().length;
+      //If lenght > 10, display result as exponent
+
+      if (stringCount > 10) {
+        // convert to exponent , display 6 digits after decimal place
+        displayResult.textContent = exponential(result, 6);
+      } else {
+        displayResult.textContent = result;
+        calcSummary.textContent = displayResultValue;
+        operationHistory.push(displayResultValue);
+        console.log(operationHistory);
+      }
+    }
+    //Calling function by adding one to each btn click, avoiding duplicated data
+    historyCalculationSummary(count++);
+  });
+};
+
+equal(equalsBtn);
+
+//Create Reset Button
+
+const reset = function (button) {
+  button.addEventListener("click", function () {
+    //display result value back to 0
+    displayResultValue = "";
+    displayResult.textContent = displayResultValue;
+    //remove calc summary
+    calcSummary.textContent = "";
+  });
+};
+
+reset(resetBtn);
+
+//create history button
+
+const history = function (button) {
+  button.addEventListener("click", function () {
+    if (historyView.classList.contains("hidden")) {
+      historyView.classList.toggle("hidden");
+    } else {
+      historyView.classList.toggle("hidden");
+    }
+  });
+};
+
+history(HistoryBtn);
+
+//Add plus neg button -done
+//make sure % works -done
+//Create if statement for number of digits-done
+//create reset button - done
+//create history using a for each loop
+//hide display result
+//Hide expression
+
+// When clicked again or clicked outside show result
+
+//map key press to buttons
+//create night mode
+//Refactor code
+
+// const exponential = function expo(x, f) {
+//   return Number.parseFloat(x).toExponential(f);
+// };
