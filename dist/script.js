@@ -221,12 +221,9 @@ history(HistoryBtn);
 //make sure % works -done
 //Create if statement for number of digits-done
 //create reset button - done
-//create history using a for each loop
-//hide display result
-//Hide expression
+//create history - done
 
-// When clicked again or clicked outside show result
-
+//change display of / * keep value -done
 //map key press to buttons
 //create night mode
 //Refactor code

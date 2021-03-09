@@ -5,6 +5,25 @@ body {
   padding: 0%;
 }
 
+.history-view::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+.history-view::-webkit-scrollbar-track {
+  background: black;
+  /* color of the tracking area */
+}
+
+.history-view::-webkit-scrollbar-thumb {
+  background-color: blue;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid orange;
+  /* creates padding around scroll thumb */
+}
+
 @media (min-width: 1140px) {
   .container {
     max-width: 90%;
@@ -82,10 +101,11 @@ body {
 }
 
 .reset {
-  color: white;
-  font-size: 1.3rem;
+  color: #bbb9b9;
+  font-size: 1.2rem;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  padding-top: 0.3rem;
 }
 
 .reset:hover {
@@ -118,6 +138,25 @@ body {
   width: 100%;
   height: 28%;
   overflow-y: scroll;
+}
+
+.history-view::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+.history-view::-webkit-scrollbar-track {
+  background: black;
+  /* color of the tracking area */
+}
+
+.history-view::-webkit-scrollbar-thumb {
+  background-color: #ff006f;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #ff006f;
+  /* creates padding around scroll thumb */
 }
 
 .history-row {
@@ -242,19 +281,23 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.3rem;
-  color: #ff006f;
+  color: #e00061;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  font-size: 2rem;
-  padding-top: 0.35rem;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
 }
 
 .divide:hover {
   background-color: #15171d;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.divide span {
+  visibility: hidden;
 }
 
 .multiply {
@@ -270,19 +313,23 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.3rem;
-  color: #ff006f;
+  color: #e00061;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  font-size: 2rem;
-  padding-top: 0.5rem;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
 }
 
 .multiply:hover {
   background-color: #15171d;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.multiply span {
+  visibility: hidden;
 }
 
 .substract {
@@ -298,19 +345,23 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.3rem;
-  color: #ff006f;
+  color: #e00061;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  font-size: 2rem;
-  padding-top: 0.5rem;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
 }
 
 .substract:hover {
   background-color: #15171d;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.substract span {
+  visibility: hidden;
 }
 
 .plus {
@@ -326,19 +377,23 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.3rem;
-  color: #ff006f;
+  color: #e00061;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  font-size: 2rem;
-  padding-top: 0.3rem;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
 }
 
 .plus:hover {
   background-color: #15171d;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.plus span {
+  visibility: hidden;
 }
 
 .equals {
@@ -360,14 +415,19 @@ body {
   -webkit-transition: 0.1s;
   transition: 0.1s;
   border-radius: 0px 0px 33px 0px;
-  font-size: 2rem;
-  padding-top: 0.4rem;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .equals:hover {
   background-color: #15171d;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.equals span {
+  visibility: hidden;
 }
 
 .Nine {

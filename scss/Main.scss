@@ -79,9 +79,10 @@
 }
 
 .reset {
-  color: white;
-  font-size: 1.3rem;
+  color: rgb(187, 185, 185);
+  font-size: 1.2rem;
   transition: 0.4s;
+  padding-top: 0.3rem;
 
   &:hover {
     color: $accentColor;
@@ -117,6 +118,20 @@
   width: 100%;
   height: 28%;
   overflow-y: scroll;
+}
+
+.history-view::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.history-view::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0); /* color of the tracking area */
+}
+
+.history-view::-webkit-scrollbar-thumb {
+  background-color: $accentColor; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid $accentColor; /* creates padding around scroll thumb */
 }
 
 // .hidden{
@@ -176,38 +191,54 @@
 
 .divide {
   grid-area: divide;
-  @include calckeys($accentColor);
-  font-size: 2rem;
-  padding-top: 0.35rem;
+  @include calckeys($dullAccentColor);
+  @include mathOperator;
+}
+
+.divide span {
+  visibility: hidden;
 }
 
 .multiply {
   grid-area: multiply;
-  @include calckeys($accentColor);
-  font-size: 2rem;
-  padding-top: 0.5rem;
+  @include calckeys($dullAccentColor);
+  @include mathOperator;
+}
+
+.multiply span {
+  visibility: hidden;
 }
 
 .substract {
   grid-area: substract;
-  @include calckeys($accentColor);
-  font-size: 2rem;
-  padding-top: 0.5rem;
+  @include calckeys($dullAccentColor);
+  @include mathOperator;
+}
+
+.substract span {
+  visibility: hidden;
 }
 
 .plus {
   grid-area: plus;
-  @include calckeys($accentColor);
-  font-size: 2rem;
-  padding-top: 0.3rem;
+  @include calckeys($dullAccentColor);
+  @include mathOperator;
+}
+
+.plus span {
+  visibility: hidden;
 }
 
 .equals {
   grid-area: equals;
   @include calckeys($accentColor);
   border-radius: 0px 0px 33px 0px;
-  font-size: 2rem;
-  padding-top: 0.4rem;
+  @include mathOperator;
+  font-size: 1.5rem;
+}
+
+.equals span {
+  visibility: hidden;
 }
 
 .Nine {

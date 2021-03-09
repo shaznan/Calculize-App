@@ -1,5 +1,6 @@
 //Colours
 $accentColor: #ff006f;
+$dullAccentColor: #e00061;
 $darkcolor: #191c21;
 
 //Font family
@@ -15,6 +16,11 @@ $darkcolor: #191c21;
 
 @mixin productSansRegular {
   font-family: ProductSansRegular;
+}
+
+@mixin mathOperator {
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
 }
 
 @mixin calckeys($color) {
