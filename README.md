@@ -14,7 +14,7 @@ The calculator app was built using the below tools:
 
 ### Project Description
 
-Calculize was built as a personal project from scratch. Carrying out basic mathematical operations are possible with the Calculize.
+Calculize was built as a personal project from scratch. Carrying out basic mathematical operations are possible with Calculize.
   ## App features:
 - Supports basic operations (+, -, *, /, %)
 - Supports keypress input
