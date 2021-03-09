@@ -25,7 +25,7 @@ Calculize was built as a personal project from scratch. Carrying out basic mathe
 - Contains reset button to clear display and start new calculation
 - Contains clear button which allows user to delete recent inputs and continue working without resetting and starting all over
 
-#### Limitations of the app:
+#### *Limitations of the app:*
 - *The plus/Negative sign button will only convert input numbers from '+' to '-' & '-' to '+', but will not convert the final result.*
 - *The division button works on click but does not work with keypress properly as it will produce (two) '//' division symbol on the display area, in order to fix this issue, you will have to either click the clear key once or the backspace keyonce delete the duplicated division operator.*  
 
