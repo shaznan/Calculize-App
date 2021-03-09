@@ -32,14 +32,10 @@ const emptyBtn = document.querySelector(".empty");
 //Implementing ALgotithm
 
 const buttonlist = [
-  //   clearBtn,
-  // plusNegBtn,
-  // percentageBtn,
   divideBtn,
   multiplyBtn,
   substractBtn,
   plusBtn,
-  //   equalsBtn,
   nineBtn,
   eightBtn,
   sevenBtn,
@@ -58,176 +54,207 @@ let operationHistory = [];
 let operationFinalResult = [];
 let displayResultValue;
 
-//Button click display value
-const btnAction = function (arrlist) {
-  arrlist.forEach(function (arr) {
-    arr.addEventListener("click", function () {
+//Display clicked buttons
+((arrlist) => {
+  for (const arr of arrlist) {
+    const addButtons = () => {
       displayResult.textContent += arr.textContent;
-      return (displayResultValue = displayResult.textContent);
-      //   }
+      displayResultValue = displayResult.textContent;
+    };
+    //click event
+    arr.addEventListener("click", addButtons);
+    document.addEventListener("keydown", (e) => {
+      //keypress event
+      if (e.key == arr.textContent) addButtons();
     });
-  });
-};
+  }
+})(buttonlist);
 
-btnAction(buttonlist);
+//clear button / backspace
 
-//Number of digits should not exceed space in calc display
-
-//Creating clear button
-
-const clear = function (button) {
-  button.addEventListener("click", function () {
-    //remove last digit
+((button) => {
+  const removeLastdigit = () => {
     displayResult.textContent = displayResult.textContent.slice(0, -1);
-  });
-};
-clear(clearBtn);
+  };
 
-//Creating plus/Neg button
-const plusNeg = function (button) {
-  button.addEventListener("click", function () {
+  button.addEventListener("click", removeLastdigit);
+  //Keypress event
+  document.addEventListener("keydown", (e) => {
+    if (e.key == "Backspace") removeLastdigit();
+  });
+})(clearBtn);
+
+//plus/Neg conversion button
+((button) => {
+  button.addEventListener("click", () => {
     if (displayResult.textContent != "") {
       displayResultValue = -displayResultValue;
       displayResult.textContent = displayResultValue;
-    } else {
-      displayResult.textContent = "";
-    }
-
-    // let signCheck = Math.sign(displayResultValue);
+    } else displayResult.textContent = "";
   });
-};
+})(plusNegBtn);
 
-plusNeg(plusNegBtn);
-
-//Creating percentage button
-const percentage = function (button) {
-  button.addEventListener("click", function () {
+//Percentage Button
+((button) => {
+  const displayPercentage = () => {
     displayResult.textContent += button.textContent;
-    return (displayResultValue = displayResult.textContent);
-  });
-};
+    displayResultValue = displayResult.textContent;
+  };
+  button.addEventListener("click", displayPercentage);
 
-percentage(percentageBtn);
+  document.addEventListener("keydown", function (e) {
+    if (e.key == "%") displayPercentage();
+  });
+})(percentageBtn);
 
 //Equal Button------------
-// click counts
-let count = 0;
 
-//History function
-const historyCalculationSummary = function (x) {
-  for (let i = x; i < operationFinalResult.length; i++) {
-    historyView.insertAdjacentHTML(
-      "afterbegin",
-      `<div class="history-row">Math Exp: <span>${operationHistory[i]} </span> <br> Result:  <span>${operationFinalResult[i]}</span> </div> `
-    );
-  }
-};
+//Equal btn func
+((button) => {
+  // click counts
+  let count = 0;
 
-//Exponential function
-const exponential = function expo(x, f) {
-  return Number.parseFloat(x).toExponential(f);
-};
+  //History function
+  const historyCalculationSummary = function (x) {
+    for (let i = x; i < operationFinalResult.length; i++) {
+      //create summary of operations
+      historyView.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="history-row">Math Exp: <span>${operationHistory[i]} </span> <br> Result:  <span>${operationFinalResult[i]}</span> </div> `
+      );
+    }
+  };
 
-//initializing button
-const equal = function (button) {
-  button.addEventListener("click", function () {
-    //check for % operator
-    if (displayResult.textContent.includes("%")) {
-      //display expression in calcsummary
+  //Exponential function
+  const exponential = (x, f) => Number.parseFloat(x).toExponential(f);
+
+  //calculate percentage
+  const percentageCalc = () => {
+    calcSummary.textContent = displayResultValue; //display expression
+    operationHistory.push(displayResultValue);
+    let percentTime = displayResultValue.match(/%/gi).length; //times % occurance in string
+    displayResultValue = displayResultValue.replaceAll("%", ""); //remove %
+    let percentResult = eval(displayResultValue) / 100 ** percentTime; //(divide by 100^  number of times)
+    operationFinalResult.push(percentResult);
+    let percentStringCount = percentResult.toString().length; //lenght of output value
+
+    if (percentStringCount > 10) {
+      //If lenght > 10, display result as exponent
+      displayResult.textContent = exponential(percentResult, 3);
+    } else {
+      displayResult.textContent = percentResult;
       calcSummary.textContent = displayResultValue;
       operationHistory.push(displayResultValue);
-
-      //Find how many times % occurance in string
-      let percentTime = displayResultValue.match(/%/gi).length;
-
-      //remove % from string (replace method)
-      displayResultValue = displayResultValue.replaceAll("%", "");
-
-      //check how many % included (divide by 100^ number of times)
-      //calculate result
-      let percentResult = eval(displayResultValue) / 100 ** percentTime;
-      //Push percent result to final result
-      operationFinalResult.push(percentResult);
-      //find out lenght of output value
-      let percentStringCount = percentResult.toString().length;
-      //If lenght > 10, display result as exponent
-      if (percentStringCount > 10) {
-        // convert to exponent , display 6 digits after decimal place
-        displayResult.textContent = exponential(percentResult, 6);
-      } else {
-        displayResult.textContent = percentResult;
-        calcSummary.textContent = displayResultValue;
-        operationHistory.push(displayResultValue);
-        // console.log(operationHistory);
-      }
-
-      // displayResult.textContent = eval(displayResultValue) / 100 ** percentTime;
-    } else {
-      //result calculation
-      let result = eval(displayResultValue);
-      //push result to operation result array
-      operationFinalResult.push(result);
-      console.log(operationFinalResult);
-      //Find out lenght of output value
-      let stringCount = result.toString().length;
-      //If lenght > 10, display result as exponent
-
-      if (stringCount > 10) {
-        // convert to exponent , display 6 digits after decimal place
-        displayResult.textContent = exponential(result, 6);
-      } else {
-        displayResult.textContent = result;
-        calcSummary.textContent = displayResultValue;
-        operationHistory.push(displayResultValue);
-        console.log(operationHistory);
-      }
     }
-    //Calling function by adding one to each btn click, avoiding duplicated data
-    historyCalculationSummary(count++);
-  });
-};
+  };
+  //perform rest calculations
+  const calculateResult = () => {
+    let result = eval(displayResultValue); //result calculation
+    operationFinalResult.push(result); //push result to operation result array
+    let stringCount = result.toString().length; //Find out lenght of output value
 
-equal(equalsBtn);
+    if (stringCount > 10) {
+      //If lenght > 10, display result as exponent
+      displayResult.textContent = exponential(result, 6); // convert to exponent , display 6 digits after decimal place
+    } else {
+      displayResult.textContent = result;
+      calcSummary.textContent = displayResultValue;
+      operationHistory.push(displayResultValue);
+      console.log(operationHistory);
+    }
+  };
+
+  button.addEventListener("click", function () {
+    //check for % operator
+    displayResult.textContent.includes("%")
+      ? percentageCalc()
+      : calculateResult();
+
+    historyCalculationSummary(count++); //Calling function by adding one to each btn click, avoiding duplicated data
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key == "Enter") {
+      displayResult.textContent.includes("%")
+        ? percentageCalc()
+        : calculateResult();
+
+      historyCalculationSummary(count++); //Calling function by adding one to each btn click, avoiding duplic
+    }
+  });
+})(equalsBtn);
 
 //Create Reset Button
-
-const reset = function (button) {
-  button.addEventListener("click", function () {
+((button) => {
+  const clearContent = () => {
     //display result value back to 0
     displayResultValue = "";
     displayResult.textContent = displayResultValue;
     //remove calc summary
     calcSummary.textContent = "";
-  });
-};
+  };
 
-reset(resetBtn);
+  button.addEventListener("click", clearContent);
+  //keypress event
+  document.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") clearContent();
+  });
+})(resetBtn);
 
 //create history button
-
-const history = function (button) {
-  button.addEventListener("click", function () {
+((button) => {
+  const toggleClassList = () => {
     if (historyView.classList.contains("hidden")) {
       historyView.classList.toggle("hidden");
     } else {
       historyView.classList.toggle("hidden");
     }
+  };
+
+  button.addEventListener("click", toggleClassList);
+  //add keypress event
+  document.addEventListener("keydown", (e) => {
+    if (e.key == " ") toggleClassList();
   });
-};
+})(HistoryBtn);
 
-history(HistoryBtn);
+//Expanding text area
 
-//Add plus neg button -done
-//make sure % works -done
-//Create if statement for number of digits-done
-//create reset button - done
-//create history - done
+const expandbtn = document.querySelector(".expandbtn");
+const expandTxtarea = document.querySelector(".expandtxtarea");
+const calculator = document.querySelector(".calculator");
 
-//change display of / * keep value -done
-//map key press to buttons
-//create night mode
-//Refactor code
+//click add event listner
+expandbtn.addEventListener("click", () => {
+  if (expandTxtarea.classList.contains("expandedtxtarea")) {
+    expandTxtarea.classList.remove("expandedtxtarea");
+    expandbtn.classList.remove("expandbtn-transform");
+    //rem/add overflow to avoid text overflow if window not expanded
+    setTimeout(() => {
+      calculator.classList.remove("calculator-rem-overflow");
+    }, 500);
+  } else {
+    expandTxtarea.classList.add("expandedtxtarea");
+    expandbtn.classList.add("expandbtn-transform");
+    //rem/add overflow to avoid text overflow if window not expanded
+    setTimeout(() => {
+      calculator.classList.add("calculator-rem-overflow");
+    }, 0);
+  }
+});
 
-// const exponential = function expo(x, f) {
-//   return Number.parseFloat(x).toExponential(f);
-// };
+//keypress listner
+document.addEventListener("keydown", (e) => {
+  if (e.key == "ArrowLeft") {
+    expandTxtarea.classList.add("expandedtxtarea");
+    expandbtn.classList.add("expandbtn-transform");
+    setTimeout(() => {
+      calculator.classList.toggle("calculator-rem-overflow");
+    }, 0);
+  } else if (e.key == "ArrowRight") {
+    expandTxtarea.classList.remove("expandedtxtarea");
+    expandbtn.classList.remove("expandbtn-transform");
+    setTimeout(() => {
+      calculator.classList.toggle("calculator-rem-overflow");
+    }, 500);
+  }
+});

@@ -13,26 +13,28 @@
 //Nav buttons
 .simple {
   padding: 1.5vh 5vh 1.5vh 5vh;
-  border-radius: 7px 0px 0px 7px;
-  background-color: black;
+  border-radius: 7px;
+  background-color: white;
   color: $accentColor;
   font-weight: bold;
-  border: 2px solid black;
+  box-shadow: inset 6px 6px 9px 0px rgba(230, 230, 230, 1),
+    inset -7px -9px 9px 0px rgba(255, 255, 255, 1);
+
   margin-right: 0px;
   @include productSansRegular;
   font-size: 1.2rem;
 }
 
-.scientific {
-  padding: 1.5vh 4vh 1.5vh 4vh;
-  border-radius: 0px 7px 7px 0px;
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  margin-left: -5px;
-  @include productSansRegular;
-  font-size: 1.2rem;
-}
+// .scientific {
+//   padding: 1.5vh 4vh 1.5vh 4vh;
+//   border-radius: 0px 7px 7px 0px;
+//   background-color: white;
+//   color: black;
+//   border: 2px solid black;
+//   margin-left: -5px;
+//   @include productSansRegular;
+//   font-size: 1.2rem;
+// }
 
 //Body
 
@@ -43,6 +45,7 @@
 .main-text h1 {
   font-size: 4.5rem;
   @include productSansRegular;
+  z-index: +5;
 }
 
 .main-text span {
@@ -55,15 +58,19 @@
 .calculator {
   position: relative;
   max-width: 19%;
-  // width: 20%;
   margin-top: 10vh;
   margin-left: 40vh;
-  height: 68vh;
+  height: 69vh;
   background-color: $darkcolor;
   border-radius: 33px;
   box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  // justify-content: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.calculator-rem-overflow {
+  overflow: visible;
 }
 
 //icons
@@ -72,6 +79,8 @@
   font-size: 1.3rem;
   transform: scale(1);
   transition: 0.4s;
+  padding-top: 0.5rem;
+  // background-color: $darkcolor;
 
   &:hover {
     color: $accentColor;
@@ -82,7 +91,8 @@
   color: rgb(187, 185, 185);
   font-size: 1.2rem;
   transition: 0.4s;
-  padding-top: 0.3rem;
+  padding-top: 0.9rem;
+  // background-color: $darkcolor;
 
   &:hover {
     color: $accentColor;
@@ -93,7 +103,8 @@
 
 .displayResult {
   color: white;
-  height: 20vh;
+  height: 22vh;
+  background-color: $darkcolor;
 }
 
 .calculation span {
@@ -103,9 +114,10 @@
 }
 
 .result {
-  font-size: 3.3rem;
+  font-size: 2.7rem;
   @include productSansRegular;
   height: 8vh;
+  white-space: nowrap;
 }
 
 .hidden {
@@ -121,17 +133,17 @@
 }
 
 .history-view::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 .history-view::-webkit-scrollbar-track {
-  background: rgb(0, 0, 0); /* color of the tracking area */
+  background: rgb(0, 0, 0);
 }
 
 .history-view::-webkit-scrollbar-thumb {
-  background-color: $accentColor; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid $accentColor; /* creates padding around scroll thumb */
+  background-color: $accentColor;
+  border-radius: 20px;
+  border: 3px solid $accentColor;
 }
 
 // .hidden{
@@ -156,6 +168,50 @@
   color: $accentColor;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.expandtxtarea {
+  background-color: $darkcolor;
+  // width: 18vw;
+  width: 0vw;
+  height: 22vh;
+  position: absolute;
+  top: 6.9vh;
+  right: 16vw;
+  transition: 0.6s;
+}
+
+.expandedtxtarea {
+  width: 18vw;
+}
+
+.expandbtn {
+  position: absolute;
+  top: 16vh;
+  right: 15.5vw;
+  // right: 32.5vw;
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  color: rgb(150, 150, 150);
+  animation: pulse 1.5s ease-in-out infinite;
+  z-index: +2;
+  transition: 0.6s;
+}
+
+.expandbtn-transform {
+  right: 32.5vw;
+  transform: rotate(180deg);
+}
+
+@keyframes pulse {
+  0% {
+    color: rgb(221, 221, 221);
+    // transform: scale(1.1);
+  }
+  100% {
+    color: rgb(150, 150, 150);
+    // transform: scale(1);
+  }
 }
 
 //Calculator keys

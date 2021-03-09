@@ -5,25 +5,6 @@ body {
   padding: 0%;
 }
 
-.history-view::-webkit-scrollbar {
-  width: 12px;
-  /* width of the entire scrollbar */
-}
-
-.history-view::-webkit-scrollbar-track {
-  background: black;
-  /* color of the tracking area */
-}
-
-.history-view::-webkit-scrollbar-thumb {
-  background-color: blue;
-  /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  border: 3px solid orange;
-  /* creates padding around scroll thumb */
-}
-
 @media (min-width: 1140px) {
   .container {
     max-width: 90%;
@@ -39,23 +20,13 @@ body {
 
 .simple {
   padding: 1.5vh 5vh 1.5vh 5vh;
-  border-radius: 7px 0px 0px 7px;
-  background-color: black;
+  border-radius: 7px;
+  background-color: white;
   color: #ff006f;
   font-weight: bold;
-  border: 2px solid black;
+  -webkit-box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
+          box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
   margin-right: 0px;
-  font-family: ProductSansRegular;
-  font-size: 1.2rem;
-}
-
-.scientific {
-  padding: 1.5vh 4vh 1.5vh 4vh;
-  border-radius: 0px 7px 7px 0px;
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  margin-left: -5px;
   font-family: ProductSansRegular;
   font-size: 1.2rem;
 }
@@ -67,6 +38,7 @@ body {
 .main-text h1 {
   font-size: 4.5rem;
   font-family: ProductSansRegular;
+  z-index: +5;
 }
 
 .main-text span {
@@ -79,12 +51,20 @@ body {
   max-width: 19%;
   margin-top: 10vh;
   margin-left: 40vh;
-  height: 68vh;
+  height: 69vh;
   background-color: #191c21;
   border-radius: 33px;
   -webkit-box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
           box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  white-space: nowrap;
+}
+
+.calculator-rem-overflow {
+  overflow: visible;
 }
 
 .history {
@@ -94,6 +74,7 @@ body {
           transform: scale(1);
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  padding-top: 0.5rem;
 }
 
 .history:hover {
@@ -105,7 +86,7 @@ body {
   font-size: 1.2rem;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  padding-top: 0.3rem;
+  padding-top: 0.9rem;
 }
 
 .reset:hover {
@@ -114,7 +95,8 @@ body {
 
 .displayResult {
   color: white;
-  height: 20vh;
+  height: 22vh;
+  background-color: #191c21;
 }
 
 .calculation span {
@@ -124,9 +106,10 @@ body {
 }
 
 .result {
-  font-size: 3.3rem;
+  font-size: 2.7rem;
   font-family: ProductSansRegular;
   height: 8vh;
+  white-space: nowrap;
 }
 
 .hidden {
@@ -142,21 +125,16 @@ body {
 
 .history-view::-webkit-scrollbar {
   width: 12px;
-  /* width of the entire scrollbar */
 }
 
 .history-view::-webkit-scrollbar-track {
   background: black;
-  /* color of the tracking area */
 }
 
 .history-view::-webkit-scrollbar-thumb {
   background-color: #ff006f;
-  /* color of the scroll thumb */
   border-radius: 20px;
-  /* roundness of the scroll thumb */
   border: 3px solid #ff006f;
-  /* creates padding around scroll thumb */
 }
 
 .history-row {
@@ -176,6 +154,59 @@ body {
   color: #ff006f;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.expandtxtarea {
+  background-color: #191c21;
+  width: 0vw;
+  height: 22vh;
+  position: absolute;
+  top: 6.9vh;
+  right: 16vw;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.expandedtxtarea {
+  width: 18vw;
+}
+
+.expandbtn {
+  position: absolute;
+  top: 16vh;
+  right: 15.5vw;
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  color: #969696;
+  -webkit-animation: pulse 1.5s ease-in-out infinite;
+          animation: pulse 1.5s ease-in-out infinite;
+  z-index: +2;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.expandbtn-transform {
+  right: 32.5vw;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    color: #dddddd;
+  }
+  100% {
+    color: #969696;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    color: #dddddd;
+  }
+  100% {
+    color: #969696;
+  }
 }
 
 .grid-container {
@@ -212,8 +243,8 @@ body {
 
 .clear:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .plus-neg {
@@ -238,8 +269,8 @@ body {
 
 .plus-neg:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .percentage {
@@ -264,8 +295,8 @@ body {
 
 .percentage:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .divide {
@@ -292,8 +323,8 @@ body {
 
 .divide:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .divide span {
@@ -324,8 +355,8 @@ body {
 
 .multiply:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .multiply span {
@@ -356,8 +387,8 @@ body {
 
 .substract:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .substract span {
@@ -388,8 +419,8 @@ body {
 
 .plus:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .plus span {
@@ -422,8 +453,8 @@ body {
 
 .equals:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .equals span {
@@ -452,8 +483,8 @@ body {
 
 .Nine:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .eight {
@@ -478,8 +509,8 @@ body {
 
 .eight:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .seven {
@@ -504,8 +535,8 @@ body {
 
 .seven:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .six {
@@ -530,8 +561,8 @@ body {
 
 .six:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .five {
@@ -556,8 +587,8 @@ body {
 
 .five:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .four {
@@ -582,8 +613,8 @@ body {
 
 .four:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .three {
@@ -608,8 +639,8 @@ body {
 
 .three:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .two {
@@ -634,8 +665,8 @@ body {
 
 .two:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .one {
@@ -660,8 +691,8 @@ body {
 
 .one:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .zero {
@@ -686,8 +717,8 @@ body {
 
 .zero:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .dot {
@@ -712,8 +743,8 @@ body {
 
 .dot:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .empty {
@@ -739,8 +770,8 @@ body {
 
 .empty:hover {
   background-color: #15171d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .empty:hover {

@@ -25,6 +25,9 @@
     </style>
     <!----CSS Style sheet-->
     <link rel="stylesheet" href="/dist/css/Main.css" />
+    <!---AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   </head>
   <body>
     <main>
@@ -37,32 +40,33 @@
             <img
               src="/Images/logo sideways black-01.png"
               alt="Logo-image"
-              width="200vh"
+              width="250vh"
             />
           </div>
-          <div class="calc-option col-4 mt-5 d-flex justify-content-end ">
-            <div class="simple d-inline" >Simple</div>
-            <div class="scientific d-inline ">Scientific</div>
+          <div class="calc-option col-4 mt-5 d-flex justify-content-center ">
+            <div class="simple d-inline mr-5" >Simple Calculator</div>
+            <!-- <div class="scientific d-inline ">Scientific</div> -->
           </div>
         </section>
         <!--Body-->
         <section class="row main-content">
           <div class="text col-6 d-flex align-items-center main-text justify-content-center">
-           <h1>Your One Stop<br><span>Calculation</span> <br> Spot </h1>
+            <h1><div data-aos="fade-right"  data-aos-duration="1000" data-aos-delay="300">Your One Stop</div>
+              <div data-aos="fade-right"  data-aos-duration="1000" data-aos-delay="400"><span>Calculation</span></div> 
+              <div data-aos="fade-right"  data-aos-duration="1000" data-aos-delay="500">Spot</div></h1>
           </div>
-          <div class="calculator col-6 ">
+          <div class="calculator col-6 " data-aos="fade-left"  data-aos-duration="1000" data-aos-delay="600">
             <div class="row icons mt-3 pr-2 pl-2">
               <div class="col-6 history d-inline-flex justify-content-start"></i><i class="bi bi-clock-history history"></i></div>
               <div class="col-6 reset d-inline-flex justify-content-end">Reset</div>
             </div>
-            <div class="row displayResult align-items-end pr-3 mb-4">
+            <div class="row displayResult align-items-end pr-3 mb-0 pb-2">
               <div class="calculation col-12  d-flex justify-content-end pt-5 mt-5"> <span></span></div>
+              <div class="expandtxtarea"></div>
+              <i class="fas fa-angle-left expandbtn mt-0"></i>
               <div class="result col-12 d-flex justify-content-end" contenteditable="false" placeholder="0"></div>
               <div class="history-view hidden">
-                <!-- <div class="history-row">Math Exp: <span>2+2</span> <br> Result: <span>2</span> </div> -->
-                <!-- <div class="history-row">Math Exp: <span></span> <br> Result: <span></span> </div>
-                <div class="history-row">Math Exp: <span></span> <br> Result: <span></span> </div>
-                <div class="history-row">Math Exp: <span></span> <br> Result: <span></span> </div> -->
+                <!-- Virtual DOM -->
               </div>
             </div>
             <div class="grid-container row calc-keys text-light">
@@ -111,5 +115,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
+    <!----AOS Library-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
   </body>
 </html>
