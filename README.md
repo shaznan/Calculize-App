@@ -58,11 +58,11 @@ The equal button has three compartments in it:
 2. Percentage calculation
 3. Calculating controlled input results
 
-##### The HistorySummaryCalculation
+##### 1. The HistorySummaryCalculation
 
 The historySummarycalculation function declaration contains a regular for loop, which loops into both the operationresult and operationfinalresult arrays which produces array values based on the calculation functions. And creates a virtual dom with a template literal of all the calculation summary.
 
-##### The Percentage calculation
+##### 2. The Percentage calculation
 
 The percentage calculation function declaration takes into account if any “%’ operator is present in the display output string and removes them as ‘%’ is not a controlled input for eval method calculation, and does the percentage calculation manually. 
 
@@ -72,7 +72,7 @@ The percentage calculation function declaration takes into account if any “%�
 -Before calculation, all percentage symbols are replaced to none “”. 
 -The result of the output is converted into a string to find the length of it and is passed into the exponential function which converts the final output if it exceeds 10 characters to an exponential notation. 
 
-##### Calculating controlled input results
+##### 3. Calculating controlled input results
 
 The calculate result function declaration calculates the string present in the display output with mathematical operators by converting them into numbers and operators. The output is converted into an exponential notation if the final output characters exceed 10 digits. 
 
