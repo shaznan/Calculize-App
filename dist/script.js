@@ -27,7 +27,6 @@ const twoBtn = document.querySelector(".two");
 const oneBtn = document.querySelector(".one");
 const zeroBtn = document.querySelector(".zero");
 const dotBtn = document.querySelector(".dot");
-const emptyBtn = document.querySelector(".empty");
 
 //Implementing ALgotithm
 
@@ -47,7 +46,7 @@ const buttonlist = [
   oneBtn,
   zeroBtn,
   dotBtn,
-  emptyBtn,
+  percentageBtn,
 ];
 
 let operationHistory = [];
@@ -56,7 +55,7 @@ let displayResultValue;
 
 //Display clicked buttons
 ((arrlist) => {
-  for (const arr of arrlist) {
+  arrlist.forEach((arr) => {
     const addButtons = () => {
       displayResult.textContent += arr.textContent;
       displayResultValue = displayResult.textContent;
@@ -67,7 +66,7 @@ let displayResultValue;
       //keypress event
       if (e.key == arr.textContent) addButtons();
     });
-  }
+  });
 })(buttonlist);
 
 //clear button / backspace
@@ -93,19 +92,6 @@ let displayResultValue;
     } else displayResult.textContent = "";
   });
 })(plusNegBtn);
-
-//Percentage Button
-((button) => {
-  const displayPercentage = () => {
-    displayResult.textContent += button.textContent;
-    displayResultValue = displayResult.textContent;
-  };
-  button.addEventListener("click", displayPercentage);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key == "%") displayPercentage();
-  });
-})(percentageBtn);
 
 //Equal Button------------
 
