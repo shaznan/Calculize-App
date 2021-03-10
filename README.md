@@ -89,6 +89,10 @@ The expand button hides or shows the expanded display area by toggling through c
 
 - A set timeout function is declared and is called based on the time allocated to it which is equivalent to the css animation property duration, to avoid disturbance of the animation flow. 
 
+# Flowchart 
+
+![image](https://user-images.githubusercontent.com/74103414/110631234-4d973a00-81cc-11eb-8026-ee16971974c4.png)
+
 
 
 
