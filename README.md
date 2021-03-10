@@ -66,7 +66,7 @@ The historySummarycalculation function declaration contains a regular for loop, 
 
 The percentage calculation function declaration takes into account if any “%’ operator is present in the display output string and removes them as ‘%’ is not a controlled input for eval method calculation, and does the percentage calculation manually. 
 
-#####How it works? 
+##### How it works? 
 -The number of times % is used in the string is taken into account using the match method and the length property. And the total result is divided by 100^ the amount of times the percentage occurrence in the string. 
 
 -Before calculation, all percentage symbols are replaced to none “”. 
