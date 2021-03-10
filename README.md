@@ -78,5 +78,17 @@ The calculate result function declaration calculates the string present in the d
 
 The functions are then called later with click and keypress event handlers. Each time an event occurs, the history calculation summary function is called with a count++ variable which was earlier declared as zero. Each time the historycalculationsummary function is called, it adds 1 to the starting variable to avoid duplication of old summary data in the virtual dom. 
 
+### Reset button
+The reset button clears all display values
+
+### History button
+The history button hides and shows the virtual dom summary by toggling the hidden class created separately in css. 
+
+### Expand button
+The expand button hides or shows the expanded display area by toggling through css classes. The overflow property is also toggled to make sure characters in the display output doesn’t spill out of the display area when the display area is not expanded. 
+
+- A set timeout function is declared and is called based on the time allocated to it which is equivalent to the css animation property duration, to avoid disturbance of the animation flow. 
+
+
 
 
