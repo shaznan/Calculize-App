@@ -26,7 +26,6 @@ body {
   font-weight: bold;
   -webkit-box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
           box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
-  margin-right: 0px;
   font-family: ProductSansRegular;
   font-size: 1.2rem;
 }
@@ -782,5 +781,24 @@ body {
   content: attr(placeholder);
   pointer-events: none;
   display: block;
+}
+
+.Developer-Credentials {
+  font-family: ProductSansRegular;
+  position: absolute;
+  bottom: 1vh;
+  left: 1vw;
+  background-color: white;
+  color: #aaaaaa;
+}
+
+.Developer-Credentials span a {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+
+.Developer-Credentials span a:hover {
+  color: #ff006f;
+  font-weight: bolder;
 }
 /*# sourceMappingURL=Main.css.map */

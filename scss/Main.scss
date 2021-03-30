@@ -366,3 +366,26 @@
   pointer-events: none;
   display: block;
 }
+
+//user credentials
+
+.Developer-Credentials {
+  @include productSansRegular;
+  position: absolute;
+  bottom: 1vh;
+  left: 1vw;
+  background-color: white;
+  color: #aaaaaa;
+
+  span {
+    a {
+      text-decoration: none;
+      color: #aaaaaa;
+    }
+
+    a:hover {
+      color: $accentColor;
+      font-weight: bolder;
+    }
+  }
+}
