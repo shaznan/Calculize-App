@@ -1,7 +1,7 @@
 body {
   margin: 0%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0%;
 }
 
@@ -14,7 +14,7 @@ body {
 .main-page {
   width: 100vw;
   height: 100vh;
-  background-image: url("/Images/Main_Bg.png");
+  background-image: url("../../Images/Main_Bg.png");
   background-size: 1920px 1080px;
 }
 
@@ -24,8 +24,9 @@ body {
   background-color: white;
   color: #ff006f;
   font-weight: bold;
-  -webkit-box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
-          box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
+  -webkit-box-shadow: inset 6px 6px 9px 0px #e6e6e6,
+    inset -7px -9px 9px 0px white;
+  box-shadow: inset 6px 6px 9px 0px #e6e6e6, inset -7px -9px 9px 0px white;
   font-family: ProductSansRegular;
   font-size: 1.2rem;
 }
@@ -54,11 +55,11 @@ body {
   background-color: #191c21;
   border-radius: 33px;
   -webkit-box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
-          box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
+  box-shadow: 9px 10px 29px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   white-space: nowrap;
 }
 
@@ -70,7 +71,7 @@ body {
   color: white;
   font-size: 1.3rem;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   padding-top: 0.5rem;
@@ -178,7 +179,7 @@ body {
   font-size: 2rem;
   color: #969696;
   -webkit-animation: pulse 1.5s ease-in-out infinite;
-          animation: pulse 1.5s ease-in-out infinite;
+  animation: pulse 1.5s ease-in-out infinite;
   z-index: +2;
   -webkit-transition: 0.6s;
   transition: 0.6s;
@@ -187,7 +188,7 @@ body {
 .expandbtn-transform {
   right: 32.5vw;
   -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 @-webkit-keyframes pulse {
@@ -212,12 +213,17 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   height: 40vh;
   gap: 0px 0px;
-      grid-template-areas: "clear plus-neg percentage divide" "seven eight Nine multiply" "four five six substract" "one two three plus" "empty zero dot equals";
+  grid-template-areas:
+    "clear plus-neg percentage divide"
+    "seven eight Nine multiply"
+    "four five six substract"
+    "one two three plus"
+    "empty zero dot equals";
 }
 
 .clear {
@@ -230,12 +236,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #aaaaaa;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -243,7 +249,7 @@ body {
 .clear:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .plus-neg {
@@ -256,12 +262,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #aaaaaa;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -269,7 +275,7 @@ body {
 .plus-neg:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .percentage {
@@ -282,12 +288,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #aaaaaa;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -295,7 +301,7 @@ body {
 .percentage:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .divide {
@@ -308,12 +314,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #e00061;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
   font-size: 1.3rem;
@@ -323,7 +329,7 @@ body {
 .divide:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .divide span {
@@ -340,12 +346,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #e00061;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
   font-size: 1.3rem;
@@ -355,7 +361,7 @@ body {
 .multiply:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .multiply span {
@@ -372,12 +378,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #e00061;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
   font-size: 1.3rem;
@@ -387,7 +393,7 @@ body {
 .substract:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .substract span {
@@ -404,12 +410,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #e00061;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
   font-size: 1.3rem;
@@ -419,7 +425,7 @@ body {
 .plus:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .plus span {
@@ -436,12 +442,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #ff006f;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
   border-radius: 0px 0px 33px 0px;
@@ -453,7 +459,7 @@ body {
 .equals:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .equals span {
@@ -470,12 +476,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -483,7 +489,7 @@ body {
 .Nine:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .eight {
@@ -496,12 +502,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -509,7 +515,7 @@ body {
 .eight:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .seven {
@@ -522,12 +528,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -535,7 +541,7 @@ body {
 .seven:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .six {
@@ -548,12 +554,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -561,7 +567,7 @@ body {
 .six:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .five {
@@ -574,12 +580,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -587,7 +593,7 @@ body {
 .five:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .four {
@@ -600,12 +606,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -613,7 +619,7 @@ body {
 .four:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .three {
@@ -626,12 +632,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -639,7 +645,7 @@ body {
 .three:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .two {
@@ -652,12 +658,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -665,7 +671,7 @@ body {
 .two:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .one {
@@ -678,12 +684,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -691,7 +697,7 @@ body {
 .one:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .zero {
@@ -704,12 +710,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -717,7 +723,7 @@ body {
 .zero:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .dot {
@@ -730,12 +736,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: white;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
@@ -743,7 +749,7 @@ body {
 .dot:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .empty {
@@ -756,12 +762,12 @@ body {
   padding: 1rem;
   background-color: #252932;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: #252932;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   -webkit-transition: 0.1s;
   transition: 0.1s;
   border-radius: 0px 0px 0px 33px;
@@ -770,7 +776,7 @@ body {
 .empty:hover {
   background-color: #15171d;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .empty:hover {
