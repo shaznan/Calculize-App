@@ -63,6 +63,10 @@ body {
   white-space: nowrap;
 }
 
+.calculator:hover {
+  cursor: pointer;
+}
+
 .calculator-rem-overflow {
   overflow: visible;
 }
@@ -79,6 +83,7 @@ body {
 
 .history:hover {
   color: #ff006f;
+  cursor: pointer;
 }
 
 .reset {
@@ -91,6 +96,7 @@ body {
 
 .reset:hover {
   color: #ff006f;
+  cursor: pointer;
 }
 
 .displayResult {
